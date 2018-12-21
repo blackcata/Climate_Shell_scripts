@@ -23,16 +23,16 @@
 #
 
 export regrid_type="regrid_spec_ocean1x1.nc"
-export file_type="ocean_month.nc"   # The simulation result including variables
-export var=("mld")             # Variable names 
+export file_type="ocean_month.nc"    # The simulation result including variables
+export var=("mld")                   # Variable names 
 export yr_strt=1941                  # Start year of regrdding
 export yr_end=1941                   # End year of regridding
 
-export date="0101"					# Month & Day of simulation results
-export exp="chlon_SST_restore_E1"	# The name of simulation
-export model="CM2.1"					# The name of model
+export date="0101"	             # Month & Day of simulation results
+export exp="chlon_SST_restore_E1"    # The name of simulation
+export model="CM2.1"		     # The name of model
 
-export num_var=${#var[@]}    	    # the number of variables
+export num_var=${#var[@]}    	     # the number of variables
 
 # Initialize the log file
 if [ -e log.out ] ; then 
