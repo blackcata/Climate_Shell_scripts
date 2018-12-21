@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #------------------------------------------------------------------------------------#
-#					 											                     #      
-#			  SCRIPT FOR EXTRACTING & REGRIDDING & CHOOSING VARIABLES				 #
-#					 											   BY   : KMN        #
-#					 											   DATE : 2018.12.20 #      
-#					 											                     #      
+#					 				             #      
+#	      SCRIPT FOR EXTRACTING & REGRIDDING & CHOOSING VARIABLES		     #
+#								   BY   : KMN        #
+#				 				   DATE : 2018.12.20 #      
+#								                     #      
 #------------------------------------------------------------------------------------#
 
 #
