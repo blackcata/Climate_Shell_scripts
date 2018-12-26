@@ -84,8 +84,8 @@ for ivar in $(seq 0 $num_var); do
 
 
 			# Regridding - excute regrid
-			#./regrid.x >> log.out
-			./regrid.x
+			./regrid.x >> log.out
+			#./regrid.x
 			echo ""
 
 		done 
