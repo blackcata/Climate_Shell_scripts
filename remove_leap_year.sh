@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #------------------------------------------------------------------------------------#
-#																					 #
-#				  SCRIPT for Removing the leap year to each file     				 #
-#																					 #
-#																	BY : KM.Noh      #
-#																  DATE : 2019.02.18  #
-#																					 #
+#	  									     #
+#		  SCRIPT for Removing the leap year to each file     		     #
+#      										     #
+#		     						    BY : KM.Noh      #
+#								  DATE : 2019.02.18  #
+#										     #
 #------------------------------------------------------------------------------------#
 
 export yr_strt=1982   # Starting year of combining
