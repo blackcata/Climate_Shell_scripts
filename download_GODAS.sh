@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #------------------------------------------------------------------------------------#
-#																				     #
-#					      SCRIPT for downloading the GODAS DATA  			         #
-#																				     #
-#																 BY   :  KM.Noh      #
-#																 DATE : 2019.03.29   #
-#										      										 #
+#										     #
+#			 SCRIPT for downloading the GODAS DATA  	             #
+#										     #
+#								 BY   :  KM.Noh      #
+#								 DATE : 2019.03.29   #
+#							   			     #
 #------------------------------------------------------------------------------------#
 
 export yr_strt=1981   # Starting year of combining
