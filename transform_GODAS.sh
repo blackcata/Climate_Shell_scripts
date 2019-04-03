@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #------------------------------------------------------------------------------------#
-#																				     #
-#    SCRIPT for transforming GODAS grib data to the NetCDF Format the GODAS DATA  	 #
-#																				     #
-#																 BY   :  KM.Noh      #
-#																 DATE : 2019.04.01   #
-#										      										 #
+#										     #
+#    SCRIPT for transforming GODAS grib data to the NetCDF Format the GODAS DATA     #
+#										     #
+#								 BY   :  KM.Noh      #
+#								 DATE : 2019.04.01   #
+#			      							     #
 #------------------------------------------------------------------------------------#
 
 export yr_strt=1995   # Starting year of combining
