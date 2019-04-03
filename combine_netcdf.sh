@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #------------------------------------------------------------------------------------#
-#																					 #
-#				  SCRIPT for combining each netCDF files to one file				 #
-#																					 #
-#																	BY : KM109       #
-#																  DATE : 2019.01.31  #
-#																					 #
+#							   			     #
+#	        SCRIPT for combining each netCDF files to one file		     #
+#										     #
+#								    BY : KM109       #
+#								  DATE : 2019.01.31  #
+#										     #
 #------------------------------------------------------------------------------------#
 
 export yr_strt=1982   # Starting year of combining
