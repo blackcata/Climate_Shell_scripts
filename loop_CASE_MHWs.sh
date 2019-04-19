@@ -3,7 +3,7 @@
 #------------------------------------------------------------------------------------#
 #                                                                                    #
 #                  SCRIPT for loop for specific cases to each ncl file               #
-#										                                             #
+#                                                                                    #
 #                                                                 BY   :  KM.Noh     #
 #                                                                 DATE : 2019.04.19  #
 #                                                                                    #
@@ -21,7 +21,7 @@ for case in $(seq $case_str $case_end); do
     # Change the case and make temporal file
     sed $line_change $file_name > tmp.ncl 
 
-    #Excute ncl file and remove file
+    #Execute ncl file and remove file
     ncl tmp.ncl 
     rm tmp.ncl
 done
