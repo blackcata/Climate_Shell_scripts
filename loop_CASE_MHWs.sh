@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #------------------------------------------------------------------------------------#
-#										                                             #
-#			     SCRIPT for loop for specific cases to each ncl file  	             #
-#										                                             #
-#								                                 BY   :  KM.Noh      #
-#								                                 DATE : 2019.04.19   #
-#							   			                                             #
+#                                                                                    #
+#                 SCRIPT for loop for specific cases to each ncl file                #
+#                                                                                    #
+#                                                                BY   :  KM.Noh      #
+#                                                                DATE : 2019.04.19   #
+#                                                                                    #
 #------------------------------------------------------------------------------------#
 
 # Specific cases are designed with specific lat, lon range
