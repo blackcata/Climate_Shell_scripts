@@ -1,0 +1,10 @@
+    &regrid_nml
+       grid_spec_file = './grid_style',
+       src_data       = './inputfile'
+       dst_data       = './outputfile',
+       num_flds       = 1
+       fld_name       = 'var'
+       fld_pos        = 'T'
+       vector_fld     = .false.
+       debug          = .false. /
+
