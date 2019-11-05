@@ -32,13 +32,16 @@ while( $ivar <= $num_var )
     set iyr=$yr_strt
     while( $iyr <= $yr_end )
 
+        set file_input={$iyr}0101.atmos_month.nc
+        set file_output={$var[$ivar]}{$iyr}.nc
+
         echo "Present Year  : "  $iyr
         echo "variable name : " $var[$ivar]
-        echo "input file    : " {$iyr}0101.atmos_month.nc
-        echo "output file   : " {$var[$ivar]}{$iyr}.nc
+        echo "input file    : " $file_input
+        echo "output file   : " $file_output
         echo ""
 
-        ncks -O -v $var[$ivar]  {$iyr}0101.atmos_month.nc {$var[$ivar]}{$iyr}.nc
+        ncks -O -v $var[$ivar]  $file_input $file_output
 	    @ iyr++
 	end
 
