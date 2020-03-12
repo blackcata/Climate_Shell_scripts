@@ -25,6 +25,7 @@ export file_list=$(cat /data6/CMIP6/km109/rcp85/log)
 for var in $var_list; do
     for model in $model_list; do
 
+        echo "!-----------------------------------------------------------------------!"
         echo "Merging variable : "$var
         echo "Merging model : "$model
         echo "Merging scenario : "$scenario
@@ -41,8 +42,7 @@ for var in $var_list; do
         echo ""
 
         export num_model_files=$(ls ${path_input} | grep ${input_prefix} | wc -l)
-        echo $input_prefix
-        echo $num_model_files
+        echo "Number of variable("$var") files in model("$model"): " $num_model_files
 
         if [ $num_model_files -eq 1 ]; then 
             # Copy the CMIP6 file, if there is only 1 file 
@@ -50,11 +50,16 @@ for var in $var_list; do
         fi
 
         if [ $num_model_files -gt 1 ]; then 
+            if [ ${model} = "IPSL-CM6A-LR" ] || [ ${model} = "MPI-ESM2-0" ]; then 
+                cp $file_input"_"$year_str"01-"$year_end"12.nc" $file_output
+            else
             # Excute the time merging by using CDO commands
-            cdo mergetime $file_input"*" $file_output
+                cdo mergetime $file_input"*" $file_output
+            fi
         fi
 
         echo "MERGING COMPLETED "
+        echo "!-----------------------------------------------------------------------!"
         echo ""
     done
 done
