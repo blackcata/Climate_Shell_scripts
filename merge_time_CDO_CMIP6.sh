@@ -51,7 +51,7 @@ for var in $var_list; do
 
         if [ $num_model_files -gt 1 ]; then 
             # Excute the time merging by using CDO commands
-            echo cdo mergetime $file_input"*" $file_output
+            cdo mergetime $file_input"*" $file_output
         fi
 
         echo "MERGING COMPLETED "
