@@ -8,18 +8,18 @@
 #------------------------------------------------------------------------------------#
 
 
-export var="no3os_Omon"           # The name of variable to merge in CMIP6
-export model="NorESM2-LM"         # The name of model to merge in CMIP6
-export scenario="historical"      # The name of scenario to merge in CMIP6
+export scenario="ssp585"      # The name of scenario to merge in CMIP6
 export grid_style="gn"            # The name of grid_style to merge in CMIP6
-export year_str="1850"            # The name of scenario start year to merge in CMIP6
-export year_end="2014"            # The name of scenario end year to merge in CMIP6
+export year_str="2015"            # The name of scenario start year to merge in CMIP6
+export year_end="2100"            # The name of scenario end year to merge in CMIP6
 
-export path_input="/data6/CMIP6/km109/historical/monthly/nitrate"
-export path_output="/data6/CMIP6/km109/historical/monthly/nitrate"
+export path_input="/data6/CMIP6/km109/rcp85/DATA"
+export path_output="/data6/CMIP6/SSP585/monthly"
 
 export var_list=$(cat var_list_CMIP6.dat)
 export model_list=$(cat model_list_CMIP6.dat)
+export file_list=$(cat /data6/CMIP6/km109/rcp85/log)
+
 
 # Start regrid process 
 for var in $var_list; do
@@ -40,8 +40,19 @@ for var in $var_list; do
         echo "OUTPUT : "$file_output
         echo ""
 
-        # Excute the time merging by using CDO commands
-        cdo mergetime $file_input"*" $file_output
+        export num_model_files=$(ls ${path_input} | grep ${input_prefix} | wc -l)
+        echo $input_prefix
+        echo $num_model_files
+
+        if [ $num_model_files -eq 1 ]; then 
+            # Copy the CMIP6 file, if there is only 1 file 
+            cp $file_input"_"$year_str"01-"$year_end"12.nc" $file_output
+        fi
+
+        if [ $num_model_files -gt 1 ]; then 
+            # Excute the time merging by using CDO commands
+            echo cdo mergetime $file_input"*" $file_output
+        fi
 
         echo "MERGING COMPLETED "
         echo ""
