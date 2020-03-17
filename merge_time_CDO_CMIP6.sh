@@ -49,13 +49,20 @@ for var in $var_list; do
             cp $file_input"_"$year_str"01-"$year_end"12.nc" $file_output
         fi
 
-        if [ $num_model_files -gt 1 ]; then 
-            if [ ${model} = "IPSL-CM6A-LR" ] || [ ${model} = "MPI-ESM2-0" ]; then 
-                cp $file_input"_"$year_str"01-"$year_end"12.nc" $file_output
+        if [ $num_model_files -gt 1 ] ; then 
+            if [ ${scenario} = "ssp126" ] || [ ${scenario} = "ssp245" ] || \
+               [ ${scenario} = "ssp585" ]; then 
+                # Exception for IPSL / MRI model, which extends to 2300 year in ScenarioMIP
+                if [ ${model} = "IPSL-CM6A-LR" ] || [ ${model} = "MPI-ESM2-0" ]; then 
+                    cp $file_input"_"$year_str"01-"$year_end"12.nc" $file_output
+                else
+                # Excute the time merging by using CDO commands
+                    cdo mergetime $file_input"*" $file_output
+                fi
             else
             # Excute the time merging by using CDO commands
                 cdo mergetime $file_input"*" $file_output
-            fi
+            fi 
         fi
 
         echo "MERGING COMPLETED "
