@@ -18,8 +18,6 @@ export path_output="/data6/CMIP6/SSP585/monthly"
 
 export var_list=$(cat var_list_CMIP6.dat)
 export model_list=$(cat model_list_CMIP6.dat)
-export file_list=$(cat /data6/CMIP6/km109/rcp85/log)
-
 
 # Start regrid process 
 for var in $var_list; do
