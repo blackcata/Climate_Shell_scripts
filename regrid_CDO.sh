@@ -7,33 +7,37 @@
 #								                     #      
 #------------------------------------------------------------------------------------#
 
-export N_lat=180 	   # The number of latitude direction mesh
-export N_lon=360 	   # The numer of longitude direction mesh 
+export N_lat=360 	   # The number of latitude direction mesh
+export N_lon=180 	   # The numer of longitude direction mesh 
 
 export regrid="remapbil"   # Regridding method - bilinear
-export var="MLD"           # The name of variable to regrid
+export var="po4"           # The name of variable to regrid
 
 echo "Remapping variable : "$var
 echo "Remapping lat/lon : "$N_lat"x"$N_lon
 echo "Remapping Method : "$regrid
+echo " "
 
-export yrstrt="1980"       # Starting year of regridding
-export yrend="2015"	   # End year of regridding
+export path_input="/data6/CMIP6/historical/monthly/po4/org"
+export path_output="/data6/CMIP6/historical/monthly/po4/regrid"
+export list=$(ls ${path_input})
 
 # Start regrid process 
-for ((yr=$yrstrt; $yr <= $yrend; yr++)); do
+for input in $list; do
 	# Set input & output files for regridding
-	export file_input="MLD_SODA_"$yr".nc"
-	export file_output="MLD_SODA_$yr."$regrid"."$N_lon"x"$N_lat".nc"
+	export file_input=$path_input"/"$input
+	export file_output=$path_output"/regrid_"$N_lat"x"$N_lon"_"$input
 
 	echo ""
+    echo "!-----------------------------------------------------------------------!"
 	echo "INPUT : "$file_input
 	echo "OUTPUT : "$file_output
 	echo ""
 
 	# Excute the regridding by using CDO commands
-	cdo $regrid,r$N_lat"x"$N_lon -selname,$var $file_input $file_output
+    cdo $regrid,r$N_lat"x"$N_lon -selname,$var $file_input $file_output
 
 	echo "REMAPPING COMPLETED "
+	echo "!-----------------------------------------------------------------------!"
 	echo ""
-done 
+done
