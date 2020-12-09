@@ -35,7 +35,7 @@ for input in $list; do
 	echo ""
 
 	# Excute the regridding by using CDO commands
-    cdo $regrid,r$N_lat"x"$N_lon -selname,$var $file_input $file_output
+    cdo -L $regrid,r$N_lat"x"$N_lon -selname,$var $file_input $file_output
 
 	echo "REMAPPING COMPLETED "
 	echo "!-----------------------------------------------------------------------!"
