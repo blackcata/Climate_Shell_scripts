@@ -58,31 +58,31 @@ def make_jpg_to_video(remove_tmp,filenames,output_name,frame_duration):
 ##################################################################################
 #                 Mannual Setting for Video of Variable Changes                  #
 ##################################################################################
+## Inputdata Settings
 dir_name  = "./DATA/"
-file_name = "SST_CMIP6_CDRMIP_MM.nc"
+file_name = "fCO2_CMIP6_CDRMIP_MM.nc"
 path_name = dir_name+file_name
 f         = xr.open_dataset(path_name)
-ann_var   = f.tos
 
-## Colorbar Setting
+## Colorbar Settings
 colorbar_min      = 0   ; colorbar_max      = 2000
 colorbar_levels   = 31  ; 
 level_boundaries  = np.linspace(colorbar_min,colorbar_max,colorbar_levels+1)
 cmap_type         = 'gist_heat_r'
 cbar_font_size    = 10
 
-## Variable Setting
-ann_var    = fCO2
+## Variable Settings
+ann_var    = f.fgco2
 year_strt  = 1900 ; year_end = 2100
 var_name   = "Anthropogenic CO2 Emission"
 unit_name  =  "[gC/m$^2$/yr]"
 
-## Ouputdata Imamge Setting
+## Ouputdata Image Settings
 dir_name        =  "./RESULT/CO2_Ant/"
 title_prefix    =  "Contour_CESM2_Ant_CO2_emission_surf_"
 title_extension =  "jpeg"
 
-## Output Video Setting
+## Output Video Settings
 dir_name       =  "./RESULT/CO2_Ant/"
 output_gif     =  dir_name+"Contour_CESM2_Ant_CO2_emission_surf_1900-2100.gif"
 output_mp4     =  dir_name+"Contour_CESM2_Ant_CO2_emission_surf_1900-2100.mp4"
