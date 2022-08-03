@@ -40,9 +40,9 @@ def make_jpg_to_video(remove_tmp,filenames,output_name,frame_duration):
     # build gif
     with imageio.get_writer(output_gif, mode='I',duration=frame_duration) as writer:
     for filename in filenames:
-    if os.path.exists(filename):
-    image = imageio.imread(filename)
-    writer.append_data(image)
+        if os.path.exists(filename):
+            image = imageio.imread(filename)
+            writer.append_data(image)
 
     # convert to mp4
     clip = mp.VideoFileClip(output_gif)
@@ -50,9 +50,9 @@ def make_jpg_to_video(remove_tmp,filenames,output_name,frame_duration):
 
     # Remove temporary files
     if (remove_tmp):
-    for filename in set(filenames):
-    if os.path.exists(filename):
-    os.remove(filename)            
+        for filename in set(filenames):
+            if os.path.exists(filename):
+                os.remove(filename)            
 
 
 ##################################################################################
