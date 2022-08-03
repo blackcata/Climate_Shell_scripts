@@ -58,10 +58,11 @@ def make_jpg_to_video(remove_tmp,filenames,output_name,frame_duration):
 ##################################################################################
 #                 Mannual Setting for Video of Variable Changes                  #
 ##################################################################################
-## Inputdata Setting
-dir_name        =  "./RESULT/CO2_Ant/"
-title_prefix    =  "Contour_CESM2_Ant_CO2_emission_surf_"
-title_extension =  "jpeg"
+dir_name  = "./DATA/"
+file_name = "SST_CMIP6_CDRMIP_MM.nc"
+path_name = dir_name+file_name
+f         = xr.open_dataset(path_name)
+ann_var   = f.tos
 
 ## Colorbar Setting
 colorbar_min      = 0   ; colorbar_max      = 2000
@@ -75,6 +76,11 @@ ann_var    = fCO2
 year_strt  = 1900 ; year_end = 2100
 var_name   = "Anthropogenic CO2 Emission"
 unit_name  =  "[gC/m$^2$/yr]"
+
+## Ouputdata Imamge Setting
+dir_name        =  "./RESULT/CO2_Ant/"
+title_prefix    =  "Contour_CESM2_Ant_CO2_emission_surf_"
+title_extension =  "jpeg"
 
 ## Output Video Setting
 dir_name       =  "./RESULT/CO2_Ant/"
