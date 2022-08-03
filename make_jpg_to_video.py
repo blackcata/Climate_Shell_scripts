@@ -3,7 +3,7 @@
 #                 SCRIPT for making contours and combining to one Video              #
 #                                                                                    #
 #                                                          BY : KYUNG MIN NOH        #
-#                                                          DATE : 2022.08.01         #
+#                                                          DATE : 2022.08.03         #
 #                                                          Based On below Code       #
 #                                                           : https://bit.ly/3zKbRKO #
 #------------------------------------------------------------------------------------#
