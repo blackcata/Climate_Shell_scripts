@@ -1,2 +1,0 @@
-#!/usr/bin/bash
-qstat -f $1 | grep 'Job_Name'
