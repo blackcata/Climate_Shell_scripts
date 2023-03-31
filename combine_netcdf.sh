@@ -4,7 +4,7 @@
 #							   			     #
 #	        SCRIPT for combining each netCDF files to one file		     #
 #										     #
-#								    BY : KM109       #
+#								    BY : KM.NOH      #
 #								  DATE : 2019.01.31  #
 #										     #
 #------------------------------------------------------------------------------------#
