@@ -1,7 +1,7 @@
 #!/bin/bash
 #------------------------------------------------------------------------------------#
 #					 				             #      
-#	                SCRIPT FOR ANNUAL MEANING OF VARIABLES IN SEASON	   #
+#	                SCRIPT FOR ANNUAL MEANING OF VARIABLES IN SEASON	     #
 #								   BY   : KM.NOH     #
 #				 				   DATE : 2023.03.31 #      
 #								                     #      
