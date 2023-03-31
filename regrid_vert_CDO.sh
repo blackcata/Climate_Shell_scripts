@@ -1,7 +1,7 @@
 #!/bin/bash
 #------------------------------------------------------------------------------------#
 #					 				             #      
-#	                SCRIPT FOR VERTICAL REGRIDDING VARIABLES		             #
+#	                SCRIPT FOR VERTICAL REGRIDDING VARIABLES	             #
 #								   BY   : KM.NOH     #
 #				 				   DATE : 2020.11.19 #      
 #								                     #      
