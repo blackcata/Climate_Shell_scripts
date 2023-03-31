@@ -1,7 +1,7 @@
 #!/bin/bash
 #------------------------------------------------------------------------------------#
 #					 				             #      
-#	                 SCRIPT FOR ANNUAL MEANING OF VARIABLES		        #
+#	                 SCRIPT FOR ANNUAL MEANING OF VARIABLES		            #
 #								   BY   : KM.NOH     #
 #				 				   DATE : 2022.11.17 #      
 #								                     #      
