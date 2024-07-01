@@ -11,19 +11,20 @@ export N_lat=360 	   # The number of latitude direction mesh
 export N_lon=180 	   # The numer of longitude direction mesh 
 
 export regrid="remapbil"   # Regridding method - bilinear
-export var="po4"           # The name of variable to regrid
+export var="chlos"           # The name of variable to regrid
 
 echo "Remapping variable : "$var
 echo "Remapping lat/lon : "$N_lat"x"$N_lon
 echo "Remapping Method : "$regrid
 echo " "
 
-export path_input="/data6/CMIP6/historical/monthly/po4/org"
-export path_output="/data6/CMIP6/historical/monthly/po4/regrid"
+export path_input="/home/Kyungmin.Noh/Python/DATA/"
+export path_output="/home/Kyungmin.Noh/Python/DATA/"
 export list=$(ls ${path_input})
 
 # Start regrid process 
-for input in $list; do
+#for input in $list; do
+export input="tmp.nc"
 	# Set input & output files for regridding
 	export file_input=$path_input"/"$input
 	export file_output=$path_output"/regrid_"$N_lat"x"$N_lon"_"$input
@@ -40,4 +41,4 @@ for input in $list; do
 	echo "REMAPPING COMPLETED "
 	echo "!-----------------------------------------------------------------------!"
 	echo ""
-done
+#done
